@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="heading-container">
+            <h1>CAESAR CIPHER</h1>
+        </div>
+
+        <div id="main-container">
+            <!-- Controls section -->
+            <!-- This section contains the controls for encoding/decoding and setting the shift key -->
+            <div class="box">
+                <div class="heading">
+                    <h2>Controls</h2>
+                </div>
+
+                <form id="controls">
+                    <!-- Encode/Decode radio buttons -->
+                    <!-- User can select whether to encode or decode the message -->
+                    <div class="row">
+                        <div>
+                            <input type="radio" id="encode" name="code" value="encode" checked>
+                            <label for="encode">Encode</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="decode" name="code" value="decode">
+                            <label for="decode">Decode</label>
+                        </div>
+                    </div>
+
+                    <!-- Shift key input -->
+                    <!-- User can enter the shift key value for the Caesar cipher -->
+                    <div class="row">
+                        <div>
+                            <label for="shift-input">Shift Key:</label>
+                            <input type="number" id="shift-input" name="shift" value="3" min="1" max="25">
+                        </div>
+                    </div>
+
+                    <!-- Apply button -->
+                    <!-- Clicking this button triggers the encoding/decoding process -->
+                    <div>
+                        <button type="submit">Apply</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Input section -->
+            <!-- This section displays the input text area for the user to enter the message -->
+            <div class="box">
+                <div class="heading">
+                    <h2 id="heading-input">Plaintext</h2>
+                </div>
+                <textarea id="input-text" rows="6"></textarea>
+            </div>
+
+            <!-- Output section -->
+            <!-- This section displays the output text area with the encoded/decoded message -->
+            <div class="box">
+                <div class="heading">
+                    <h2 id="heading-output">Ciphertext</h2>
+                </div>
+                <div class="output-container">
+                    <textarea id="output-text" rows="6" readonly></textarea>
+                    <button id="copy-btn">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error message container -->
+        <!-- This container displays any error messages to the user -->
+        <div id="error-message"></div>
+    </div>
+
+    <script src="caesar.js"></script>
+</body>
+</html>
